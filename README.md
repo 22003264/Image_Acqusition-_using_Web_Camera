@@ -31,35 +31,19 @@ End the program and close the output video window by pressing 'q'.
 ``` Python
 ### Developed By: J.NETHRAA
 ### Register No: 212222100031
-
-## i) Write the frame as JPG file
-import cv2
-viedoCaptureObject=cv2.VideoCapture(0)
-while(True):
-    ret,frame=viedoCaptureObject.read()
-    cv2.imwrite("exsecond.jpg",frame)
-    result=False
-viedoCaptureObject.release()
-cv2.destroyAllWindows()
-
-
-                              or
-
-
-    import cv2
-videoCaptureObject = cv2.VideoCapture(0)
-frame_count = 0
-while(True):
-    ret, frame = videoCaptureObject.read()
-    cv2.imwrite(f"frame_{frame_count}.jpg", frame)
-    frame_count += 1
-    
-    if frame_count >= 100:
-        break
-videoCaptureObject.release()
-cv2.destroyAllWindows()
 ```
-
+## i) Write the frame as JPG file
+import numpy as np
+import cv2
+cap=cv2.VideoCapture(0)
+while True:
+    ret,frame=cap.read()
+    cv2.imshow('bottle',frame)
+    if cv2.waitKey(1)==ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()                  
+```
 
 ## ii) Display the video
 ```python
@@ -68,7 +52,7 @@ import cv2
 cap=cv2.VideoCapture(0)
 while True:
     ret,frame=cap.read()
-    cv2.imshow('RESULT',frame)
+    cv2.imshow('bottle',frame)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
@@ -114,31 +98,29 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('ksp',image)
+    cv2.imshow('RotatedVideo',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
 
-
-
 ```
 ## Output
 
 ### i) Write the frame as JPG image
-![308643999-d1908b3a-38a5-4e42-8580-6021c985126f](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/6895b704-32f9-4bf4-80d3-f7d9ce91ea54)
+![328526487-3d11e716-7055-434b-9f7c-5d0f73959aa9](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/06d830bc-9692-409c-8450-cc11fe0be4d4)
 
 
 ### ii) Display the video
-![308644028-6636d2e9-157d-4f19-855d-7687874b1055](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/657be5f0-498e-4074-a860-84f4cf3d74a6)
+![328526487-3d11e716-7055-434b-9f7c-5d0f73959aa9](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/a2e727a7-371e-4f3a-99d0-63983ae04e17)
 
 
 ### iii) Display the video by resizing the window
 
-![308644087-bb0c07e3-7c58-4777-8b89-6f6acc59bd53](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/7ad7bc6b-ab80-4c6d-a653-3c71d8278a8e)
+![328528088-6ff05ba2-38e9-4b8d-97d1-d9d34b3188cc](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/b31dc810-b939-4814-b310-bdafc0fa1da1)
 
 ### iv) Rotate and display the video
-![308644150-2d3f8076-e7ca-42ac-86d7-919d72898c65](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/e83a090d-71c8-48d7-b080-e63f34945316)
+![328528946-7e08e184-b339-46ad-8fb2-7b3af2213442](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/5b97de36-f304-4bca-bcba-7833124d6b94)
 
 
 ## Result:
