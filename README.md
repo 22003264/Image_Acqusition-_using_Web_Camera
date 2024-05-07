@@ -33,6 +33,7 @@ End the program and close the output video window by pressing 'q'.
 ### Register No: 212222100031
 ```
 ## i) Write the frame as JPG file
+```
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
@@ -75,7 +76,7 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=smaller_frame
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('ksp',image)
+    cv2.imshow('Video',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
@@ -98,7 +99,7 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('RotatedVideo',image)
+    cv2.imshow('Rotated Video',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
