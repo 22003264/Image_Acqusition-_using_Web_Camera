@@ -1,73 +1,68 @@
 # Image_Acqusition-_using_Web_Camera
-## Aim
- 
-Aim:
- 
+## Aim: 
 To write a python program using OpenCV to capture the image from the web camera and do the following image manipulations.
+
 i) Write the frame as JPG 
+
 ii) Display the video 
+
 iii) Display the video by resizing the window
+
 iv) Rotate and display the video
 
-## Software Used
+## Software Used:
 Anaconda - Python 3.7
-## Algorithm
+## Algorithm:
 ### Step 1:
-<br>Import the cv2 and numpy package.
+Use cv2.VideoCapture(0) to access web camera
+<br>
 
 ### Step 2:
+Use cv2.imread to read the video or image
 <br>
-Read the Video frame using the cv2.VideoCapture(0)
 
 ### Step 3:
-<br>Write the image using imwrite().
+Use cv2.imwrite to save the image
+<br>
 
 ### Step 4:
+Use cv2.imshow to show the video
 <br>
-Display the frame using the imshow().
 
 ### Step 5:
-<br>Divide the frame into halves and assign the smaller frame and Rotate the frame using the cv2.rotate().
+End the program and close the output video window by pressing 'q'.
+<br>
 
 ## Program:
-
-### Developed By:ONTEDDU.SIRISHA
-### Register no:212222230103
+### Developed By:ONTEDDU SIRISHA
+### Register No: 212222230103
 
 ## i) Write the frame as JPG file
-```
+```Python
 import cv2
-obj = cv2.VideoCapture(0)
+viedoCaptureObject=cv2.VideoCapture(0)
 while(True):
-    cap,frame = obj.read()
-    cv2.imshow('video.jpg',frame)
-    cv2.imwrite("pic.jpg",frame)
-    if cv2.waitKey(1) == ord('q'):
-        break
-obj.release()
-```
-
-
-## ii) Display the video
-```
-
-import cv2
-img = cv2.VideoCapture(0)
-while(True):
-    imagee,frame = img.read()
-    cv2.imshow('pic',frame)
-    cv2.imwrite("nature.jpg",frame)
-    if cv2.waitKey(1) == ord('q'):
-        break
-img.release()
+    ret,frame=viedoCaptureObject.read()
+    cv2.imwrite("NewPicture.jpg",frame)
+    result=False
+viedoCaptureObject.release()
 cv2.destroyAllWindows()
-
 ```
-
-
-
+## ii) Display the video
+```Python
+import numpy as np
+import cv2
+cap=cv2.VideoCapture(0)
+while True:
+    ret,frame=cap.read()
+    cv2.imshow('SIRISHA',frame)
+    if cv2.waitKey(1)==ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()
+```
 ## iii) Display the video by resizing the window
-```
+```Python
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
@@ -81,68 +76,56 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=smaller_frame
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('PIC',image)
+    cv2.imshow('SIRISHA',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
 ```
-
 ## iv) Rotate and display the video
-```
-import cv2
+```Python
 import numpy as np
-cap = cv2.VideoCapture(0)
+import cv2
+cap=cv2.VideoCapture(0)
 while True:
-    ret, frame = cap.read() 
-    width = int(cap.get(3))
-    height = int(cap.get(4))
-    image = np.zeros(frame.shape, np.uint8) 
-    smaller_frame = cv2.resize(frame, (0,0), fx = 0.5, fy=0.5)
-    image[:height//2, :width//2] = cv2.rotate(smaller_frame,cv2.ROTATE_180)
-    image[height//2:, :width//2] = smaller_frame 
-    image[:height//2, width//2:] = smaller_frame
-    image[height//2:, width//2:] = cv2.rotate(smaller_frame,cv2.ROTATE_180)
-    cv2.imshow('NATURE_PIC', image)
+    ret,frame=cap.read()
+    width=int(cap.get(3))
+    height=int(cap.get(4))
+    image=np.zeros(frame.shape,np.uint8)
+    smaller_frame=cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
+    image[:height//2, :width//2]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
+    image[height//2:, :width//2]=smaller_frame
+    image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
+    image[height//2:, width//2:]=smaller_frame
+    cv2.imshow('SIRISHA',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
 ```
-
-
-
-
-
-
-
-
-
-## Output
-
+## Output:
 ### i) Write the frame as JPG image
-
-
-![image](https://github.com/premalatha-sureshbabu/Image_Acqusition-_using_Web_Camera/assets/120620842/63d3f302-29f3-4e97-901b-7fa340acbfed)
-
-
+![3O1](https://github.com/JananiSoundararajan/Image_Acqusition-_using_Web_Camera/assets/119477549/7ce19aac-78ef-4081-8437-91e582910fba)
+</br>
+</br>
 
 ### ii) Display the video
+![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/76677102-1978-425e-b14e-bda7dce2157d)
 
-![image](https://github.com/premalatha-sureshbabu/Image_Acqusition-_using_Web_Camera/assets/120620842/25722fb4-ee94-472f-a5d3-e9c57a5f86c7)
-
-
+</br>
+</br>
 
 ### iii) Display the video by resizing the window
+![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/47767e8d-e653-4738-8418-8687076e7216)
 
-![image](https://github.com/premalatha-sureshbabu/Image_Acqusition-_using_Web_Camera/assets/120620842/54b00ea5-e9f1-4901-b038-4ac7f1470899)
-
-
-
+</br>
+</br>
 
 ### iv) Rotate and display the video
+![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/a4c9d393-ad2c-49bd-969d-fddb817dc75b)
 
-![image](https://github.com/premalatha-sureshbabu/Image_Acqusition-_using_Web_Camera/assets/120620842/0b4f7a35-ab82-4231-969e-093f261c5f2f)
+</br>
+</br>
 
 ## Result:
 Thus the image is accessed from webcamera and displayed using openCV.
