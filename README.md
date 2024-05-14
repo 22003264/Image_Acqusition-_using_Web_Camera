@@ -1,68 +1,67 @@
 # Image_Acqusition-_using_Web_Camera
-## Aim: 
+## Aim
+ 
+Aim:
+ 
 To write a python program using OpenCV to capture the image from the web camera and do the following image manipulations.
-
 i) Write the frame as JPG 
-
 ii) Display the video 
-
 iii) Display the video by resizing the window
-
 iv) Rotate and display the video
 
-## Software Used:
+## Software Used
 Anaconda - Python 3.7
-## Algorithm:
+## Algorithm
 ### Step 1:
-Use cv2.VideoCapture(0) to access web camera
-<br>
+Use cv2.VideoCapture(0) to access web camera.
 
 ### Step 2:
-Use cv2.imread to read the video or image
-<br>
+Use cv2.imread to read the video or image.
 
 ### Step 3:
-Use cv2.imwrite to save the image
-<br>
+Use cv2.imwrite to save the image.
 
 ### Step 4:
-Use cv2.imshow to show the video
-<br>
+Use cv2.imshow to show the video.
 
 ### Step 5:
 End the program and close the output video window by pressing 'q'.
-<br>
 
 ## Program:
+
 ### Developed By:ONTEDDU SIRISHA
 ### Register No: 212222230103
-
 ## i) Write the frame as JPG file
-```Python
-import cv2
-viedoCaptureObject=cv2.VideoCapture(0)
-while(True):
-    ret,frame=viedoCaptureObject.read()
-    cv2.imwrite("NewPicture.jpg",frame)
-    result=False
-viedoCaptureObject.release()
-cv2.destroyAllWindows()
 ```
-## ii) Display the video
-```Python
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
 while True:
     ret,frame=cap.read()
-    cv2.imshow('SIRISHA',frame)
+    cv2.imshow('bottle',frame)
+    if cv2.waitKey(1)==ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()                  
+```
+
+## ii) Display the video
+```python
+import numpy as np
+import cv2
+cap=cv2.VideoCapture(0)
+while True:
+    ret,frame=cap.read()
+    cv2.imshow('bottle',frame)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
 ```
+
+
 ## iii) Display the video by resizing the window
-```Python
+```python
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
@@ -76,14 +75,16 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=smaller_frame
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('SIRISHA',image)
+    cv2.imshow('Video',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
 ```
+
+
 ## iv) Rotate and display the video
-```Python
+```python
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
@@ -97,35 +98,30 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('SIRISHA',image)
+    cv2.imshow('Rotated Video',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
+
 ```
-## Output:
+## Output
+
 ### i) Write the frame as JPG image
-![3O1](https://github.com/JananiSoundararajan/Image_Acqusition-_using_Web_Camera/assets/119477549/7ce19aac-78ef-4081-8437-91e582910fba)
-</br>
-</br>
+![328526487-3d11e716-7055-434b-9f7c-5d0f73959aa9](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/06d830bc-9692-409c-8450-cc11fe0be4d4)
+
 
 ### ii) Display the video
-![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/76677102-1978-425e-b14e-bda7dce2157d)
+![328526487-3d11e716-7055-434b-9f7c-5d0f73959aa9](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/a2e727a7-371e-4f3a-99d0-63983ae04e17)
 
-</br>
-</br>
 
 ### iii) Display the video by resizing the window
-![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/47767e8d-e653-4738-8418-8687076e7216)
 
-</br>
-</br>
+![328528088-6ff05ba2-38e9-4b8d-97d1-d9d34b3188cc](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/b31dc810-b939-4814-b310-bdafc0fa1da1)
 
 ### iv) Rotate and display the video
-![image](https://github.com/22003264/Image_Acqusition-_using_Web_Camera/assets/119389139/a4c9d393-ad2c-49bd-969d-fddb817dc75b)
+![328528946-7e08e184-b339-46ad-8fb2-7b3af2213442](https://github.com/Nethraa24/Image_Acqusition-_using_Web_Camera/assets/121215786/5b97de36-f304-4bca-bcba-7833124d6b94)
 
-</br>
-</br>
 
 ## Result:
 Thus the image is accessed from webcamera and displayed using openCV.
