@@ -28,10 +28,9 @@ Use cv2.imshow to show the video.
 End the program and close the output video window by pressing 'q'.
 
 ## Program:
-``` Python
-### Developed By: J.NETHRAA
-### Register No: 212222100031
-```
+
+### Developed By:ONTEDDU SIRISHA
+### Register No: 212222230103
 ## i) Write the frame as JPG file
 ```
 import numpy as np
